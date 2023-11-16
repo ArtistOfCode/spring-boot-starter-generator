@@ -19,7 +19,7 @@ import static java.lang.String.format;
 /**
  * 生成工具类
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/8/2
  */
 public final class GenerateUtils {

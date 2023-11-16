@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.generator.config.querys.H2Query;
 /**
  * H2兼容查询类
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/8/10
  */
 public class EnhanceH2Query extends H2Query {

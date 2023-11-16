@@ -7,7 +7,7 @@ import lombok.Setter;
 /**
  * 代码生成配置项
  *
- * @author 艾江南
+ * @author AiJiangnan
  * @date 2022/8/2
  */
 @Getter
