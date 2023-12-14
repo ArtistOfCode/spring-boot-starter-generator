@@ -2,10 +2,8 @@ package ${package.Service};
 
 import com.codeartist.component.core.support.curd.AbstractService;
 import ${package.Entity}.${entity};
-import ${package.Entity}.converter.${entity}Converter;
 import ${package.Entity}.param.${entity}Param;
 import ${package.Entity}.vo.${entity}VO;
-import ${package.Mapper}.${table.mapperName};
 import org.springframework.stereotype.Service;
 
 /**
