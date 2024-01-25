@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.generator.query.SQLQuery;
 import com.codeartist.component.generator.entity.GenerateProperties;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 
 import java.util.Collections;
 import java.util.Properties;
@@ -35,7 +35,7 @@ public final class GenerateUtils {
             properties.setTablesPrefix("t_");
         }
 
-        if (StringUtils.isEmpty(properties.getPackageName())) {
+        if (ObjectUtils.isEmpty(properties.getPackageName())) {
             properties.setPackageName("com.codeartist");
         }
 
@@ -111,11 +111,11 @@ public final class GenerateUtils {
         YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
         Properties prop;
         try {
-            ClassPathResource resource = new ClassPathResource("application-local.yaml");
+            ClassPathResource resource = new ClassPathResource("application-local.yml");
             yaml.setResources(resource);
             prop = yaml.getObject();
         } catch (IllegalStateException e) {
-            ClassPathResource resource = new ClassPathResource("bootstrap.yaml");
+            ClassPathResource resource = new ClassPathResource("application.yml");
             yaml.setResources(resource);
             prop = yaml.getObject();
         }
@@ -125,9 +125,9 @@ public final class GenerateUtils {
         }
 
         properties.setUrl(prop.getProperty("spring.datasource.url", properties.getUrl()));
-        properties.setUsername(prop.getProperty("spring.datasource.username", "sa"));
-        properties.setPassword(prop.getProperty("spring.datasource.password", ""));
-        properties.setPackageName(prop.getProperty("spring.root.package", ""));
+        properties.setUsername(prop.getProperty("spring.datasource.username", properties.getUsername()));
+        properties.setPassword(prop.getProperty("spring.datasource.password", properties.getUsername()));
+        properties.setPackageName(prop.getProperty("spring.root.package", properties.getPackageName()));
     }
 
     private static String parseDir(String packageName) {

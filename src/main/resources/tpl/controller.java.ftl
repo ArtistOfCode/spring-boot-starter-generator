@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Tag(name = "${table.controllerName}", description = "${table.comment!}")
 @RestController
-@RequestMapping("/api<#if package.ModuleName?? && package.ModuleName != "">/${package.ModuleName}</#if>/<#if controllerMappingHyphenStyle>${controllerMappingHyphen}<#else>${table.entityPath}</#if>")
+@RequestMapping("<#if package.ModuleName?? && package.ModuleName != "">/${package.ModuleName}</#if>/<#if controllerMappingHyphenStyle>${controllerMappingHyphen}<#else>${table.entityPath}</#if>")
 public class ${table.controllerName} extends AbstractController<${entity}VO, ${entity}Param> {
 
 }
