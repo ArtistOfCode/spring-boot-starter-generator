@@ -127,7 +127,7 @@ public final class GenerateUtils {
         properties.setUrl(prop.getProperty("spring.datasource.url", properties.getUrl()));
         properties.setUsername(prop.getProperty("spring.datasource.username", properties.getUsername()));
         properties.setPassword(prop.getProperty("spring.datasource.password", properties.getUsername()));
-        properties.setPackageName(prop.getProperty("spring.root.package", properties.getPackageName()));
+        properties.setPackageName(prop.getProperty("spring.application.root-package", properties.getPackageName()));
     }
 
     private static String parseDir(String packageName) {
